@@ -16562,7 +16562,13 @@ h5,
 h6 {
   color: #1e3737 !important;
 }
-
+.tp-footer__widget-title-2 {
+	color: var(--tp-common-white);
+	padding-bottom: 37px;
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff !important;
+}
 @media screen and (max-width: 768px) {
   .tp-mission-2__item {
     z-index: 2;

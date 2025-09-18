@@ -67,7 +67,12 @@ export default function Footer() {
                 data-wow-delay=".5s"
               >
                 <div className="tp-footer__widget footer-2-col-2">
-                  <h4 className="tp-footer__widget-title-2">Navigation</h4>
+                  <h4
+                    className="tp-footer__widget-title-2"
+                    style={{ color: "#fff" }}
+                  >
+                    Navigation
+                  </h4>
                   <div className="tp-footer__list">
                     <ul>
                       <li>
@@ -97,7 +102,12 @@ export default function Footer() {
                 data-wow-delay=".7s"
               >
                 <div className="tp-footer__widget footer-2-col-3">
-                  <h4 className="tp-footer__widget-title-2">Campaigns</h4>
+                  <h4
+                    className="tp-footer__widget-title-2"
+                    style={{ color: "#fff" }}
+                  >
+                    Campaigns
+                  </h4>
                   <div className="tp-footer__list">
                     <ul>
                       <li>

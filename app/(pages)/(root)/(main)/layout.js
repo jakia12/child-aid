@@ -16,29 +16,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Save the Child",
-  description: "Discover luxury salon & spa services with Glamora.",
-  icons: {
-    icon: "/images/fav.png", // Default
-    shortcut: "/images/fav.png",
-    apple: "/images/fav.png",
-  },
-  openGraph: {
-    title: "Glamora – Beauty & Wellness",
-    description: "Indulge in premium beauty, spa, and salon experiences.",
-    url: "https://yourdomain.com",
-    siteName: "Glamora",
-    images: [
-      {
-        url: "/images/openfav.jpg", // absolute URL to your image
-        width: 1200,
-        height: 630,
-        alt: "Glamora Spa & Salon Preview",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
+  title: "Child Aid",
+  description: "",
+  // icons: {
+  //   icon: "/images/fav.png", // Default
+  //   shortcut: "/images/fav.png",
+  //   apple: "/images/fav.png",
+  // },
+  // openGraph: {
+  //   title: "Glamora – Beauty & Wellness",
+  //   description: "Indulge in premium beauty, spa, and salon experiences.",
+  //   url: "https://yourdomain.com",
+  //   siteName: "Glamora",
+  //   images: [
+  //     {
+  //       url: "/images/openfav.jpg", // absolute URL to your image
+  //       width: 1200,
+  //       height: 630,
+  //       alt: "Glamora Spa & Salon Preview",
+  //     },
+  //   ],
+  //   locale: "en_US",
+  //   type: "website",
+  // },
 };
 
 export default function RootLayout({ children }) {
