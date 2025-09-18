@@ -16282,6 +16282,14 @@ p.checkout-coupon input[type="text"]:focus {
   color: var(--tp-common-white);
   padding-bottom: 37px;
 }
+.tp-footer__donate-title-sm {
+  color: var(--tp-common-white);
+  padding-bottom: 15px;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 34px;
+  color: white !important;
+}
 @media (max-width: 767px) {
   .tp-footer__widget-title-2 {
     padding-bottom: 15px;
@@ -16563,11 +16571,20 @@ h6 {
   color: #1e3737 !important;
 }
 .tp-footer__widget-title-2 {
-	color: var(--tp-common-white);
-	padding-bottom: 37px;
-	font-size: 18px;
-	font-weight: 700;
-	color: #fff !important;
+  color: var(--tp-common-white);
+  padding-bottom: 37px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff !important;
+}
+
+.tp-footer__donate-title-sm {
+  color: var(--tp-common-white);
+  padding-bottom: 15px;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 34px;
+  color: white !important;
 }
 @media screen and (max-width: 768px) {
   .tp-mission-2__item {
