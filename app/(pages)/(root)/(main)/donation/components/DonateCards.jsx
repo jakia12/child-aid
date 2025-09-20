@@ -6,61 +6,61 @@ const DONATIONS = [
     id: 1,
     img: "/images/donate/donate-2-1.png",
     category: "EDUCATION",
-    title: "Care charity names its new chief",
-    desc: "Under his leadership, we believe strengthen our position",
+    title: "Education for Every Child",
+    desc: "Provide books, tuition, and safe classrooms so children can learn and build brighter futures.",
     percent: 42,
     raised: "$4,407",
-    goal: "$10.000",
+    goal: "$10,000",
   },
   {
     id: 2,
     img: "/images/donate/donate-2-2.png",
     category: "SHELTER",
-    title: "People we support genuinely have",
-    desc: "Under his leadership, we believe strengthen our position",
+    title: "Safe Homes for Families",
+    desc: "Help displaced families find secure housing and the support they need during crises.",
     percent: 92,
     raised: "$4,407",
-    goal: "$10.000",
+    goal: "$10,000",
   },
   {
     id: 3,
     img: "/images/donate/donate-2-3.png",
     category: "HEALTH",
-    title: "Your mission is the same as ours",
-    desc: "Under his leadership, we believe strengthen our position",
+    title: "Healthcare for Children",
+    desc: "Fund medical checkups, vaccines, and essential medicines for vulnerable children.",
     percent: 58,
     raised: "$4,407",
-    goal: "$10.000",
+    goal: "$10,000",
   },
   {
     id: 4,
     img: "/images/donate/donate-2-4.png",
-    category: "CHARITY",
-    title: "Fundraising results have reached",
-    desc: "Under his leadership, we believe strengthen our position",
+    category: "FOOD",
+    title: "Meals for Hungry Communities",
+    desc: "Deliver daily meals and emergency food kits to children and families facing hunger.",
     percent: 78,
     raised: "$4,407",
-    goal: "$10.000",
+    goal: "$10,000",
   },
   {
     id: 5,
     img: "/images/donate/donate-2-1.png",
-    category: "CHARITY",
-    title: "Your mission is the same as ours",
-    desc: "Under his leadership, we believe strengthen our position",
-    percent: 78,
-    raised: "$4,407",
-    goal: "$10.000",
+    category: "WATER",
+    title: "Clean Water Access",
+    desc: "Build wells and provide filtration systems to give families safe, life-saving drinking water.",
+    percent: 65,
+    raised: "$3,250",
+    goal: "$5,000",
   },
   {
     id: 6,
     img: "/images/donate/donate-1-3.png",
     category: "CHARITY",
-    title: "Fundraising results have reached",
-    desc: "Under his leadership, we believe strengthen our position",
+    title: "Emergency Relief Fund",
+    desc: "Support urgent responses to natural disasters and humanitarian crises worldwide.",
     percent: 78,
     raised: "$4,407",
-    goal: "$10.000",
+    goal: "$10,000",
   },
 ];
 
@@ -78,7 +78,7 @@ function DonateCard({ item }) {
             <div className="tp-donate-2__thumb">
               <img src={item.img} alt={item.title} />
               <div className="tp-donate-2__thumb-text">
-                <Link href="/donation-details">
+                <Link href="/donation">
                   <i className="flaticon-tag"></i>
                   {item.category}
                 </Link>
@@ -89,7 +89,7 @@ function DonateCard({ item }) {
           <div className="col-lg-6">
             <div className="tp-donate-2__content">
               <div className="tp-donate-2__text">
-                <Link href="/donation-details">
+                <Link href="/donation">
                   <h5 className="tp-donate-2__title tp-donate-2__title">
                     {item.title}
                   </h5>

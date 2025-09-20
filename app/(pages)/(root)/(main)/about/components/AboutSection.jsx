@@ -15,7 +15,7 @@ export default function AboutSection() {
           <div className="lg:col-span-5 relative">
             <div className="relative">
               <Image
-                src="/assets/img/about/about-us-1-1.png"
+                src="/assets/img/about/about-1-1.png"
                 alt="About main"
                 width={560}
                 height={640}
@@ -25,7 +25,7 @@ export default function AboutSection() {
               {/* Small thumb */}
               <div className="absolute -bottom-8 -right-8 hidden md:block">
                 <Image
-                  src="/assets/img/about/about-us-1-2.png"
+                  src="/assets/img/about/about-1-2.png"
                   alt="About small"
                   width={220}
                   height={220}
@@ -42,7 +42,7 @@ export default function AboutSection() {
             <div className="max-w-2xl">
               <div className="pb-6">
                 <span className="inline-block text-xs tracking-widest font-semibold uppercase text-emerald-500">
-                  OUR POOREX CHARITY CENTER
+                  OUR CHILDAID CHARITY CENTER
                 </span>
                 <h3 className="mt-2 text-3xl md:text-4xl font-bold leading-tight text-slate-900 whitespace-pre-line">
                   Contribute for the Poor{"\n"}Differently Abled

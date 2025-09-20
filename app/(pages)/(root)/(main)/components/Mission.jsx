@@ -12,7 +12,7 @@ export default function Mission() {
       icon: <SlBookOpen />,
       title: "Kids Education",
       description:
-        "Consectetur adipiscing elsed do eiusmod te incididunt ut labore et dolore",
+        "We provide books, school fees, and safe classrooms so every child can learn and dream of a brighter future.",
       link: "/donation-details",
     },
     {
@@ -20,7 +20,7 @@ export default function Mission() {
       icon: <MdOutlineWaterDrop />,
       title: "Pure Water",
       description:
-        "Consectetur adipiscing elsed do eiusmod te incididunt ut labore et dolore",
+        "Through wells and filters, we deliver clean drinking water to families and schools, keeping children healthy.",
       link: "/donation-details",
     },
     {
@@ -28,18 +28,20 @@ export default function Mission() {
       icon: <IoFastFoodOutline />,
       title: "Healthy Food",
       description:
-        "Consectetur adipiscing elsed do eiusmod te incididunt ut labore et dolore",
+        "Daily meals and emergency food kits ensure children receive the nutrition they need to grow and thrive.",
       link: "/donation-details",
     },
-    // {
-    //   id: 4,
-    //   icon: "flaticon-book",
-    //   title: "Kids Education",
-    //   description:
-    //     "Consectetur adipiscing elsed do eiusmod te incididunt ut labore et dolore",
-    //   link: "/donation-details",
-    // },
   ];
+
+  // {
+  //   id: 4,
+  //   icon: "flaticon-book",
+  //   title: "Kids Education",
+  //   description:
+  //     "Consectetur adipiscing elsed do eiusmod te incididunt ut labore et dolore",
+  //   link: "/donation-details",
+  // },
+
   return (
     <div className="tp-mission-2__area tp-mission-2__space p-relative fix z-index grey-bg">
       <div className="tp-mission-2__shape">
@@ -63,8 +65,9 @@ export default function Mission() {
                 </div>
                 <div className="tp-mission-2__left-text">
                   <p>
-                    Charity is the act of extending love and kindness to <br />
-                    others unconditional which is a conscious act.
+                    ChildAid delivers practical help that protects childhood—
+                    <br />
+                    education, clean water, and nutritious food
                   </p>
                   <a className="tp-btn" href="/donation-sidebar">
                     Donate Now

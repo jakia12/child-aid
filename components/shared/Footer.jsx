@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -23,18 +22,20 @@ export default function Footer() {
                 <div className="tp-footer__widget footer-2-col-1">
                   <div className="tp-footer__logo">
                     <Link href="/">
-                      <Image
+                      <img
                         src="/flogo.png"
                         alt="Footer Logo"
-                        width={150}
-                        height={40}
+                        className="w-[60%]"
                       />
                     </Link>
                   </div>
                   <div className="tp-footer__text">
                     <p>
-                      Suspendisse posuere egeteldapibus. <br /> Aliquam cong
-                      egeteldapib Aliquam <br /> congue posuere
+                      ChildAid is committed to giving every child
+                      <br />
+                      a chance to learn, grow, and thrive. Together,
+                      <br />
+                      we bring hope through education, food, and care.
                     </p>
                   </div>
                   <div className="tp-footer__contact-list">
@@ -44,7 +45,7 @@ export default function Footer() {
                       </div>
                       <div className="tp-footer__text">
                         <a href="mailto:poorexcharity@gmail.com">
-                          poorexcharity@gmail.com
+                          childaid@gmail.com
                         </a>
                       </div>
                     </div>
@@ -76,19 +77,19 @@ export default function Footer() {
                   <div className="tp-footer__list">
                     <ul>
                       <li>
-                        <Link href="#">Recent Courses</Link>
+                        <Link href="#">Home</Link>
                       </li>
                       <li>
-                        <Link href="#">About Us</Link>
+                        <Link href="/about">About </Link>
                       </li>
                       <li>
-                        <Link href="#">Donation</Link>
+                        <Link href="/donation">Donation</Link>
                       </li>
                       <li>
-                        <Link href="#">Latest News</Link>
+                        <Link href="/events">Events</Link>
                       </li>
                       <li>
-                        <Link href="#">Contact Us</Link>
+                        <Link href="/contact">Contact Us</Link>
                       </li>
                     </ul>
                   </div>
@@ -163,7 +164,7 @@ export default function Footer() {
           <div className="row align-items-center">
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div className="tp-copyright__text text-center text-sm-start">
-                <span>© Copyright 2023 by Poorex.com</span>
+                <span>© Copyright 2025 by childaid.com</span>
               </div>
             </div>
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">

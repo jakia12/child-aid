@@ -10,20 +10,28 @@ import {
 } from "react-icons/md";
 import Slider from "react-slick";
 
-const testimonials = [
+export const testimonials = [
   {
     id: 1,
     name: "Monica Ragan",
-    role: "Donor of charity",
-    text: "As soon as you complete your donation, your gift will journey. First your money will be turned into food, and then sent to one of the over 120 countries where people are most vulnerable.",
+    role: "ChildAid Donor",
+    text: "I saw exactly where my gift went—books and meals for a local school. It felt personal and transparent.",
     image: "/images/testi/author-2-1.png",
     shape: "/images/testi/testi-shape-2-1.png",
   },
   {
     id: 2,
-    name: "Devid Roko",
-    role: "Donor of charity",
-    text: "As soon as you complete your donation, your gift will journey. First your money will be turned into food, and then sent to one of the over 120 countries where people are most vulnerable.",
+    name: "David Roko",
+    role: "Monthly Supporter",
+    text: "Becoming a monthly donor was easy. The updates show real progress—clean water changed an entire village.",
+    image: "/images/testi/author-2-1.png",
+    shape: "/images/testi/testi-shape-2-1.png",
+  },
+  {
+    id: 3,
+    name: "Rima Akter",
+    role: "Volunteer Teacher",
+    text: "The school kits arrived right before term. Seeing the kids open their bags with smiles—that’s impact.",
     image: "/images/testi/author-2-1.png",
     shape: "/images/testi/testi-shape-2-1.png",
   },
@@ -72,11 +80,11 @@ export default function Testimonials() {
               </div>
               <div className="tp-testimonial-2__left-text">
                 <p>
-                  Charity is the act of extending love and kindness
-                  unconditional which is <br />
-                  a conscious act but the decision is made by the heart, without
+                  Charity is the act of extending love and kindness without
+                  condition. It begins
                   <br />
-                  expecting act but the decision
+                  with a conscious choice, guided by the heart, expecting
+                  nothing in return.
                 </p>
               </div>
               <Link className="tp-btn" href="/team-details">

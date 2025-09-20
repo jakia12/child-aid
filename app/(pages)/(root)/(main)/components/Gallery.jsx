@@ -3,22 +3,22 @@
 const galleryItems = [
   {
     id: 1,
-    img: "/images/gallery/gal-2-1.jpg",
+    img: "/images/gallery/gal1.png",
     delay: ".3s",
   },
   {
     id: 2,
-    img: "/images/gallery/gal-2-2.jpg",
+    img: "/images/gallery/gal2.png",
     delay: ".5s",
   },
   {
     id: 3,
-    img: "/images/gallery/gal-2-3.jpg",
+    img: "/images/gallery/gal3.png",
     delay: ".7s",
   },
   {
     id: 4,
-    img: "/images/gallery/gal-2-4.jpg",
+    img: "/images/gallery/gal4.png",
     delay: ".9s",
   },
 ];

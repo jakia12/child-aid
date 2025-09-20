@@ -27,10 +27,10 @@ export default function ContactFormSection() {
                 any questions?
               </h4>
               <p>
-                Charity is the act of extending love and kindness to others{" "}
+                Charity is love put into action. Every message we receive Reach
+                out — we’d love to hear from you. is a chance to connect, share
                 <br />
-                unconditionalwhich is a conscious act but the decision is <br />
-                made by the heart, without expecting
+                kindness, and work together to create lasting change.
               </p>
 
               <div className="tp-contact-form__social-box">

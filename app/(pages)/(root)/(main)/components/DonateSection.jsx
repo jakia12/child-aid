@@ -6,9 +6,10 @@ import Link from "next/link";
 const causes = [
   {
     id: 1,
-    title: "Care charity names its new chief",
+    title: "Education for Every Child",
     category: "EDUCATION",
-    description: "Under his leadership, we believe strengthen our position",
+    description:
+      "Your support provides books, tuition, and safe classrooms so children can build brighter futures.",
     image: "/images/donate/donate-2-1.png",
     raised: "$4,407",
     goal: "$10,000",
@@ -16,9 +17,10 @@ const causes = [
   },
   {
     id: 2,
-    title: "People we support genuinely have",
+    title: "Safe Shelter for Families",
     category: "SHELTER",
-    description: "Under his leadership, we believe strengthen our position",
+    description:
+      "We help vulnerable families find secure housing and stability during times of crisis.",
     image: "/images/donate/donate-2-2.png",
     raised: "$4,407",
     goal: "$10,000",
@@ -26,9 +28,10 @@ const causes = [
   },
   {
     id: 3,
-    title: "Your mission is the same as ours",
+    title: "Healthcare Access for Children",
     category: "HEALTH",
-    description: "Under his leadership, we believe strengthen our position",
+    description:
+      "Donations provide life-saving medicine, health checkups, and nutrition programs for children in need.",
     image: "/images/donate/donate-2-3.png",
     raised: "$4,407",
     goal: "$10,000",
@@ -36,9 +39,10 @@ const causes = [
   },
   {
     id: 4,
-    title: "Fundraising results have reached",
-    category: "CHARITY",
-    description: "Under his leadership, we believe strengthen our position",
+    title: "Feeding Hungry Communities",
+    category: "FOOD & CHARITY",
+    description:
+      "Together we deliver daily meals and emergency food kits, ensuring no child goes to bed hungry.",
     image: "/images/donate/donate-2-4.png",
     raised: "$4,407",
     goal: "$10,000",

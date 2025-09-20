@@ -8,7 +8,7 @@ export default function AboutSection() {
     <section className="tp-about-2__area fix p-relative pt-120 pb-120">
       {/* Big background text */}
       <div className="tp-about-2__text-box d-none d-xl-block">
-        <h5 className="tp-about-2__big-text">poorex</h5>
+        <h5 className="tp-about-2__big-text">CHILDAID</h5>
       </div>
 
       <div className="container">
@@ -58,20 +58,22 @@ export default function AboutSection() {
           >
             <div className="tp-about-2__right-box">
               <div className="tp-about-2__section-title pb-25">
-                <span className="tp-section-subtitle-2">ABOUT OUR POOREX</span>
+                <span className="tp-section-subtitle-2">
+                  ABOUT OUR CHILDAID
+                </span>
                 <h4 className="tp-section-title">
-                  Contribute for the Poor <br />
-                  Differently Abled
+                  Why we exist <br />
                 </h4>
               </div>
 
               <div className="tp-about-2__text">
                 <p>
-                  Charity is the act of extending love and kindness to others
-                  unconditional which <br />
-                  is a conscious act but the decision is made by the heart,
-                  without expecting a <br />
-                  reward. When Charity is carried out selflessly
+                  Millions of children grow up without stable food, school, or
+                  medical care. C <br />
+                  hildAid focuses on the most vulnerable—children living in
+                  poverty, <br />
+                  in street situations, or with disabilities—so they can thrive
+                  with dignity.
                 </p>
               </div>
 
@@ -81,10 +83,11 @@ export default function AboutSection() {
                     <i className="flaticon-check-mark-black-outline" />
                   </div>
                   <div className="tp-about-2__list-content">
-                    <h4 className="tp-about-2__title-sm">Quick Fundraising</h4>
+                    <h4 className="tp-about-2__title-sm">Mission</h4>
                     <p>
-                      Charity Navigator&apos;s Giving you <br /> support
-                      multiple
+                      To remove barriers that keep vulnerable children from
+                      safety,
+                      <br /> learning, and health.
                     </p>
                   </div>
                 </div>
@@ -94,10 +97,11 @@ export default function AboutSection() {
                     <i className="flaticon-check-mark-black-outline" />
                   </div>
                   <div className="tp-about-2__list-content">
-                    <h4 className="tp-about-2__title-sm">Join Our Team</h4>
+                    <h4 className="tp-about-2__title-sm">Vision</h4>
                     <p>
-                      Charity Navigator&apos;s Giving you <br /> support
-                      multiple
+                      A world where every child grows up protected, educated,
+                      and hopeful.
+                      <br />
                     </p>
                   </div>
                 </div>
@@ -105,7 +109,7 @@ export default function AboutSection() {
 
               <div className="tp-about-2__bottom d-flex">
                 <div className="tp-about-2__btn">
-                  <Link className="tp-btn" href="/about-us">
+                  <Link className="tp-btn" href="/about">
                     Discover More
                   </Link>
                 </div>
@@ -113,7 +117,7 @@ export default function AboutSection() {
                 <div className="tp-about-2__fact d-flex align-items-center">
                   <h5 className="tp-about-2__fact-number">45K</h5>
                   <span>
-                    Homeless <br /> People
+                    Homeless <br /> Child
                   </span>
                 </div>
               </div>

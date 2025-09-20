@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -18,11 +17,10 @@ export default function Header() {
               <div className="col-xl-2 col-lg-6 col-md-4 col-7">
                 <div className="tp-header-2__logo">
                   <Link href="/" aria-label="Home">
-                    <Image
+                    <img
                       src="/logo.png"
                       alt="Logo"
-                      width={140}
-                      height={40}
+                      className="w-full h-full"
                       priority
                     />
                   </Link>

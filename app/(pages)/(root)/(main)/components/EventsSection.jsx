@@ -8,18 +8,18 @@ const events = [
     id: 1,
     date: "30, MAY",
     category: "SHELTER",
-    title: "Your mission is the same as ours inspiration for poor",
+    title: "Building Safe Shelter for Homeless Families",
     time: "08:00 am - 05:00 pm",
-    location: "New Hyde park, NY 5684",
+    location: "New Hyde Park, NY 5684",
     image: "/images/event/event-2-1.jpg",
   },
   {
     id: 2,
     date: "28, JUNE",
     category: "CHARITY",
-    title: "Trustee Leadership spring in 2023 on Charity",
+    title: "Spring Fundraiser: Hope & Support for Children",
     time: "08:00 am - 05:00 pm",
-    location: "New Hyde park, NY 5684",
+    location: "New Hyde Park, NY 5684",
     image: "/images/event/event-2-2.jpg",
   },
 ];
@@ -36,10 +36,11 @@ export default function EventsSection() {
             data-wow-delay=".3s"
           >
             <div className="tp-event-2__left-side p-relative">
+              {/* Optional shape */}
               {/* <div className="tp-event-2__shape d-none d-xl-block">
                 <Image
                   src="/images/event/event-shape-2.png"
-                  alt="Shape"
+                  alt="Decorative shape"
                   width={300}
                   height={300}
                 />
@@ -53,11 +54,9 @@ export default function EventsSection() {
               </div>
               <div className="tp-event-2__left-text">
                 <p>
-                  Charity is the act of extending love and kindness to others
-                  <br />
-                  unconditional which is a conscious act but the decision is
-                  <br />
-                  made by the heart, without expecting
+                  Charity is love put into action. Every event we host is a
+                  chance to come together, share kindness, and create lasting
+                  impact for children and families in need.
                 </p>
               </div>
               <Link className="tp-btn" href="/event-details">
@@ -84,6 +83,7 @@ export default function EventsSection() {
                         width={200}
                         height={140}
                         className="w-full h-auto"
+                        priority={event.id === 1}
                       />
                       <div className="tp-event-2__item-thumb-text">
                         <span>{event.date}</span>
@@ -98,10 +98,10 @@ export default function EventsSection() {
                       </Link>
                       <div className="tp-event-2__meta">
                         <span>
-                          <i className="fa-regular fa-clock"></i> {event.time}
+                          <i className="fa-regular fa-clock" /> {event.time}
                         </span>
                         <span>
-                          <i class="fa-solid fa-location-dot"></i>{" "}
+                          <i className="fa-solid fa-location-dot" />{" "}
                           {event.location}
                         </span>
                       </div>
@@ -109,6 +109,7 @@ export default function EventsSection() {
                   </div>
                 </div>
               ))}
+              {/* /events.map */}
             </div>
           </div>
         </div>

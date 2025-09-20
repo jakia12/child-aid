@@ -51,8 +51,9 @@ export default function HeroSlider() {
                   data-wow-duration=".9s"
                   data-wow-delay=".5s"
                 >
-                  Some People <br /> Need Help & <br />
-                  We <b>Give it.</b>
+                  Help a Child. <br /> Change a Life.
+                  <br />
+                  {/* We <b>Give it.</b> */}
                 </h4>
               </div>
               <div className="tp-slider-2__content-text">
@@ -61,12 +62,11 @@ export default function HeroSlider() {
                   data-wow-duration=".9s"
                   data-wow-delay=".7s"
                 >
-                  Help us build a future that value all human lives. Join us on
-                  our welfare projects on <br /> education, healthcare, and
-                  livelihood.
+                  From emergency relief to everyday school supplies, your
+                  kindness turns <br /> hardship into opportunity.
                 </p>
                 <Link
-                  href="/about-us"
+                  href="/about"
                   className="tp-btn wow tpfadeUp"
                   data-wow-duration=".9s"
                   data-wow-delay=".9s"

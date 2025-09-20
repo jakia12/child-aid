@@ -16,8 +16,8 @@ const CONTACT_ITEMS = [
     iconClass: <MdOutlineMarkEmailUnread />,
     links: [
       {
-        href: "mailto:poorexcharityhelp@gmail.com",
-        label: "poorexcharityhelp@gmail.com",
+        href: "mailto:childaidhelp@gmail.com",
+        label: "childaidhelp@gmail.com",
       },
       { href: "mailto:infocompany@gmail.com", label: "infocompany@gmail.com" },
     ],
