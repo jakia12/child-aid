@@ -127,9 +127,9 @@ export default function Header() {
                     <Link href="/contact">Contact</Link>
                   </li>
                   <li>
-                    <Link href="/" className="tp-btn">
-                      Donate Now
-                    </Link>
+                    <button className=" mob_btn">
+                      <Link href="/donation">Donate Now</Link>
+                    </button>
                   </li>
                 </ul>
               </nav>

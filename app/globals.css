@@ -2262,22 +2262,6 @@ input[type="url"] {
   border: 0;
 }
 
-.tp-btn {
-  display: inline-block;
-  background-color: var(--tp-common-orange);
-  color: var(--tp-common-white);
-  height: 58px;
-  line-height: 55px;
-  padding: 0 51px;
-  font-size: 14px;
-  font-weight: 700;
-  text-align: center;
-  text-transform: capitalize;
-  position: relative;
-  transition: all 0.6s linear;
-  overflow: hidden;
-  z-index: 1;
-}
 .tp-btn:hover {
   color: var(--tp-common-white);
 }
@@ -16616,23 +16600,6 @@ h6 {
     display: block !important;
   }
 
-  .tp-btn {
-    background-color: var(--tp-common-orange);
-    color: var(--tp-common-white);
-    text-align: center;
-    text-transform: capitalize;
-    z-index: 1;
-    height: 58px;
-    padding: 0 51px;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 55px;
-    transition: all 0.6s linear;
-    display: inline-block !important;
-    position: relative;
-    overflow: hidden;
-    margin-top: 13px !important;
-  }
   .zndx {
     position: relative;
     z-index: -1;
@@ -16643,7 +16610,7 @@ h6 {
     color: var(--tp-common-white);
     text-align: center;
     text-transform: capitalize;
-    z-index: 1;
+    z-index: 0 !important;
     height: 58px;
     padding: 0 51px !important;
     font-size: 14px;
@@ -16704,4 +16671,23 @@ h6 {
   margin-top: 20px;
   padding: 0 45px;
   box-shadow: 2px 3.464px 20px rgba(10, 9, 9, 0.07);
+}
+
+.mob_btn {
+  z-index: 10 !important;
+  background-color: var(--tp-common-orange);
+  color: var(--tp-common-white);
+  text-align: center;
+  text-transform: capitalize;
+
+  height: 58px;
+  padding: 0 51px !important;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 55px;
+  transition: all 0.6s linear;
+  display: inline-block !important;
+  position: relative;
+  overflow: hidden;
+  margin-top: 13px !important;
 }

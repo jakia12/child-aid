@@ -20,7 +20,7 @@ export default function ContactFormSection() {
           >
             <div className="tp-contact-form__left-box">
               <span className="tp-contact-form__subtitle">
-                CONTACT WITH POOREX
+                CONTACT WITH CHILDAID
               </span>
               <h4 className="tp-section-title pb-20">
                 Just have a quick <br />

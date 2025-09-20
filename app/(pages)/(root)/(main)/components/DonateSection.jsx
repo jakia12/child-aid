@@ -64,10 +64,10 @@ export default function DonateSection() {
           </div>
           <div className="col-xl-6 col-lg-6 col-md-6">
             <div className="tp-donate-2__right-text">
-              <p>
+              {/* <p>
                 What if we could dissect the molecular mechanisms behind Rdriven
                 gene regulation. Could this answer our questions
-              </p>
+              </p> */}
             </div>
           </div>
         </div>

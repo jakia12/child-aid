@@ -42,7 +42,7 @@ export default function CtaSection() {
                 </p>
 
                 <div className="tp-cta-2__actions gap-3 d-inline-flex flex-wrap justify-content-center">
-                  <Link href="/donation-sidebar" className="tp-btn big">
+                  <Link href="/donation" className="tp-btn big">
                     Start Donating Now
                   </Link>
                 </div>
