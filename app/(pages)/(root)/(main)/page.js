@@ -1,4 +1,3 @@
-import AboutSection from "./components/AboutSection";
 import DonateSection from "./components/DonateSection";
 import EventsSection from "./components/EventsSection";
 import Gallery from "./components/Gallery";
@@ -11,7 +10,6 @@ export default function Home() {
     <>
       <HeroSlider />
       <Mission />
-      <AboutSection />
 
       <Gallery />
       <DonateSection />

@@ -59,7 +59,7 @@ export default function EventsSection() {
                   impact for children and families in need.
                 </p>
               </div>
-              <Link className="tp-btn" href="/event-details">
+              <Link className="tp-btn" href="/events">
                 Discover More
               </Link>
             </div>
