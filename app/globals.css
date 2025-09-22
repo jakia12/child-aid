@@ -16579,6 +16579,10 @@ h6 {
   color: #fff !important;
   z-index: 10;
 }
+
+.tp-slider-2__mb {
+  margin-bottom: 0px !important;
+}
 @media screen and (max-width: 768px) {
   .tp-mission-2__item {
     z-index: 2;
