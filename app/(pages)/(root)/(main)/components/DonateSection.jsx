@@ -2,53 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { DONATIONS, formatCurrency } from "../donation/data";
 
-const causes = [
-  {
-    id: 1,
-    title: "Education for Every Child",
-    category: "EDUCATION",
-    description:
-      "Your support provides books, tuition, and safe classrooms so children can build brighter futures.",
-    image: "/images/donate/donate-2-1.png",
-    raised: "$4,407",
-    goal: "$10,000",
-    progress: 42,
-  },
-  {
-    id: 2,
-    title: "Safe Shelter for Families",
-    category: "SHELTER",
-    description:
-      "We help vulnerable families find secure housing and stability during times of crisis.",
-    image: "/images/donate/donate-2-2.png",
-    raised: "$4,407",
-    goal: "$10,000",
-    progress: 92,
-  },
-  {
-    id: 3,
-    title: "Healthcare Access for Children",
-    category: "HEALTH",
-    description:
-      "Donations provide life-saving medicine, health checkups, and nutrition programs for children in need.",
-    image: "/images/donate/donate-2-3.png",
-    raised: "$4,407",
-    goal: "$10,000",
-    progress: 58,
-  },
-  {
-    id: 4,
-    title: "Feeding Hungry Communities",
-    category: "FOOD & CHARITY",
-    description:
-      "Together we deliver daily meals and emergency food kits, ensuring no child goes to bed hungry.",
-    image: "/images/donate/donate-2-4.png",
-    raised: "$4,407",
-    goal: "$10,000",
-    progress: 78,
-  },
-];
+const causes = DONATIONS.slice(0, 4);
 
 export default function DonateSection() {
   return (
@@ -82,19 +38,19 @@ export default function DonateSection() {
               data-wow-delay=".3s"
             >
               <div className="tp-donate-2__item">
-                <div className="row">
+                <div className="row lg_align">
                   {/* Left: Image */}
                   <div className="col-lg-6">
                     <div className="tp-donate-2__thumb">
                       <Image
-                        src={cause.image}
+                        src={cause.img}
                         alt={cause.title}
                         width={300}
                         height={200}
-                        className="w-full h-auto"
+                        className="w-full "
                       />
                       <div className="tp-donate-2__thumb-text">
-                        <Link href="/donation-details">
+                        <Link href={`/donation/${cause.id}`}>
                           <i className="flaticon-tag"></i>
                           {cause.category}
                         </Link>
@@ -106,17 +62,17 @@ export default function DonateSection() {
                   <div className="col-lg-6">
                     <div className="tp-donate-2__content">
                       <div className="tp-donate-2__text">
-                        <Link href="/donation-details">
+                        <Link href={`/donation/${cause.id}`}>
                           <h5 className="tp-donate-2__title">{cause.title}</h5>
                         </Link>
-                        <p>{cause.description}</p>
+                        <p>{cause.shortDescription}</p>
                       </div>
 
                       {/* Progress Bar */}
                       <div className="tp-donate-2-progress">
                         <div className="tp-donate-2-progress-item fix">
                           <span className="progress-count">
-                            {cause.progress}%
+                            {cause.percent}%
                           </span>
                           <div className="progress">
                             <div
@@ -124,18 +80,15 @@ export default function DonateSection() {
                               data-wow-duration="1s"
                               data-wow-delay=".3s"
                               role="progressbar"
-                              style={{ width: `${cause.progress}%` }}
-                              aria-valuenow={cause.progress}
-                              aria-valuemin={0}
-                              aria-valuemax={100}
+                              style={{ width: `${cause.percent}%` }}
                             ></div>
                           </div>
                           <div className="progress-goals">
                             <span>
-                              Raised <b>{cause.raised}</b>
+                              Raised <b>{formatCurrency(cause.raised)}</b>
                             </span>
                             <span>
-                              Goal <b>{cause.goal}</b>
+                              Goal <b>{formatCurrency(cause.goal)}</b>
                             </span>
                           </div>
                         </div>
@@ -143,7 +96,10 @@ export default function DonateSection() {
 
                       {/* Button */}
                       <div className="tp-donate-2__button">
-                        <Link className="tp-grey-btn" href="/donation-sidebar">
+                        <Link
+                          className="tp-grey-btn"
+                          href={`/donation/${cause.id}`}
+                        >
                           Donate Now
                         </Link>
                       </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -17,11 +18,13 @@ export default function Header() {
               <div className="col-xl-2 col-lg-6 col-md-4 col-7">
                 <div className="tp-header-2__logo">
                   <Link href="/" aria-label="Home">
-                    <img
+                    <Image
                       src="/logo.png"
                       alt="Logo"
                       className="w-full h-full"
                       priority
+                      width={140}
+                      height={40}
                     />
                   </Link>
                 </div>
@@ -65,10 +68,10 @@ export default function Header() {
                             className="search-open-btn"
                             aria-label="Open search"
                           >
-                            <i className="flaticon-loupe" />
+                            <i className="flaticon-loupe" aria-hidden="true" />
                           </button>
                           <Link href="/login" aria-label="Login">
-                            <i className="flaticon-user" />
+                            <i className="flaticon-user" aria-hidden="true" />
                           </Link>
                         </div>
                       </li>
@@ -76,7 +79,7 @@ export default function Header() {
                       {/* Donate Button */}
                       <li>
                         <div className="tp-header-2__btn d-none d-md-block">
-                          <Link className="tp-btn" href="/donation-sidebar">
+                          <Link className="tp-btn" href="/donate">
                             Donate Now
                           </Link>
                         </div>
@@ -92,7 +95,10 @@ export default function Header() {
                             aria-controls="mobile-nav"
                             onClick={() => setIsMenuOpen((v) => !v)}
                           >
-                            <i className="fa-solid fa-bars-staggered" />
+                            <i
+                              className="fa-solid fa-bars-staggered"
+                              aria-hidden="true"
+                            />
                           </button>
                         </div>
                       </li>

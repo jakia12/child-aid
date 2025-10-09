@@ -8,25 +8,27 @@ const CONTACT_ITEMS = [
   {
     iconClass: <BiPhoneCall />,
     links: [
-      { href: "tel:+923077760800", label: "+ 92 (307) 776-0800" },
-      { href: "tel:+008898768", label: "+ 00 (8898) 768" },
+      { href: "tel:+12125551234", label: "+1 (212) 555-1234" },
+      { href: "tel:+12125559876", label: "+1 (212) 555-9876" },
     ],
   },
   {
     iconClass: <MdOutlineMarkEmailUnread />,
     links: [
-      {
-        href: "mailto:childaidhelp@gmail.com",
-        label: "childaidhelp@gmail.com",
-      },
-      { href: "mailto:infocompany@gmail.com", label: "infocompany@gmail.com" },
+      { href: "mailto:hello@childaid.org", label: "hello@childaid.org" },
+      { href: "mailto:support@childaid.org", label: "support@childaid.org" },
     ],
   },
   {
     iconClass: <IoLocationOutline />,
     // For location we keep a single link with a <br/> inside
-    rawHtml: `55 Hereford catdal street line <br/> New york, USA`,
-    links: [{ href: "#", label: "" }],
+    rawHtml: `125 Maiden Lane, Suite 5 <br/> New York, NY 10038`,
+    links: [
+      {
+        href: "https://maps.google.com/?q=125+Maiden+Lane,+New+York,+NY+10038",
+        label: "",
+      },
+    ],
   },
 ];
 

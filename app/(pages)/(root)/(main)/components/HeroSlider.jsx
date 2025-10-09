@@ -8,12 +8,7 @@ export default function HeroSlider() {
     <section className="tp-slider-2__area tp-slider-2__mb p-relative">
       {/* Shapes */}
       <div className="tp-slider-2__shape-1 d-none d-xl-block">
-        <img
-          src="/images/banner/shape2.png"
-          alt="Shape 1"
-          className="w-full"
-          wi
-        />
+        <img src="/images/banner/shape2.png" alt="Shape 1" className="w-full" />
       </div>
 
       <div className="tp-slider-2__shape-2 d-none d-xxl-block">

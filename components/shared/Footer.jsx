@@ -41,7 +41,10 @@ export default function Footer() {
                   <div className="tp-footer__contact-list">
                     <div className="tp-footer__contact-item pb-20 d-flex about-items-center">
                       <div className="tp-footer__icon">
-                        <i class="fa-solid fa-envelope"></i>
+                        <i
+                          className="fa-solid fa-envelope"
+                          aria-hidden="true"
+                        ></i>
                       </div>
                       <div className="tp-footer__text">
                         <a href="mailto:poorexcharity@gmail.com">
@@ -51,7 +54,10 @@ export default function Footer() {
                     </div>
                     <div className="tp-footer__contact-item d-flex about-items-center">
                       <div className="tp-footer__icon">
-                        <i class="fa-solid fa-phone-volume"></i>
+                        <i
+                          className="fa-solid fa-phone-volume"
+                          aria-hidden="true"
+                        ></i>
                       </div>
                       <div className="tp-footer__text">
                         <a href="tel:+990988764578">+99 (098) 876 4578</a>
@@ -170,16 +176,16 @@ export default function Footer() {
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div className="tp-copyright__social text-center text-sm-end">
                 <Link href="#">
-                  <i className="fab fa-facebook-f"></i>
+                  <i className="fab fa-facebook-f" aria-hidden="true"></i>
                 </Link>
                 <Link href="#">
-                  <i className="fab fa-instagram"></i>
+                  <i className="fab fa-instagram" aria-hidden="true"></i>
                 </Link>
                 <Link href="#">
-                  <i className="fab fa-twitter"></i>
+                  <i className="fab fa-twitter" aria-hidden="true"></i>
                 </Link>
                 <Link href="#">
-                  <i className="fab fa-pinterest-p"></i>
+                  <i className="fab fa-pinterest-p" aria-hidden="true"></i>
                 </Link>
               </div>
             </div>

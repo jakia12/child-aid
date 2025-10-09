@@ -1,7 +1,6 @@
 import PageBanner from "@/components/shared/PageBanner";
 import AboutSection from "../components/AboutSection";
 import CtaSection from "./components/CtaSection";
-import TeamSection from "./components/TeamSection";
 
 const AboutPage = () => {
   return (
@@ -9,7 +8,7 @@ const AboutPage = () => {
       <PageBanner title="About Us" />
       <AboutSection />
       <CtaSection />
-      <TeamSection />
+      {/* <TeamSection /> */}
     </div>
   );
 };

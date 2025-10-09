@@ -4,6 +4,7 @@ import "../../../globals.css";
 
 import Footer from "@/components/shared/Footer";
 import Header from "@/components/shared/Header";
+import ToasterProvider from "@/components/ToasterProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -88,7 +89,7 @@ export default function RootLayout({ children }) {
         <link
           rel="stylesheet"
           type="text/css"
-          charset="UTF-8"
+          charSet="UTF-8"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
         />
         <link
@@ -109,6 +110,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
+        <ToasterProvider />
         <main>{children}</main>
 
         <Footer />
@@ -125,7 +127,7 @@ export default function RootLayout({ children }) {
 
         {/* Bootstrap */}
         <Script
-          src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js"
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           strategy="afterInteractive"
         />
 

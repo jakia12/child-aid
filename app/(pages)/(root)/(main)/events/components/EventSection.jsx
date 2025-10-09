@@ -1,69 +1,7 @@
 // components/EventSection.jsx
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
-
-const EVENTS = [
-  {
-    id: 1,
-    img: "/images/event/event-1-1.jpg",
-    date: "17",
-    month: "Jan",
-    time: "4:30 am - 7:30 pm",
-    location: "Watsica 24, USA",
-    title: "Charity Forum: Building Stronger Communities",
-    link: "/event-details",
-  },
-  {
-    id: 2,
-    img: "/images/event/event-1-2.jpg",
-    date: "20",
-    month: "Jan",
-    time: "10:00 am - 2:00 pm",
-    location: "Watsica 24, USA",
-    title: "End Hunger Now: Community Food Drive",
-    link: "/event-details",
-  },
-  {
-    id: 3,
-    img: "/images/event/event-1-3.jpg",
-    date: "25",
-    month: "Jan",
-    time: "9:00 am - 1:00 pm",
-    location: "Watsica 24, USA",
-    title: "Youth Empowerment Workshop & Fundraiser",
-    link: "/donation-details",
-  },
-  {
-    id: 4,
-    img: "/images/event/event-1-2.jpg",
-    date: "30",
-    month: "Jan",
-    time: "5:00 pm - 8:00 pm",
-    location: "Watsica 24, USA",
-    title: "Hope for the Homeless: Winter Relief Event",
-    link: "/event-details",
-  },
-  {
-    id: 5,
-    img: "/images/event/event-1-5.jpg",
-    date: "05",
-    month: "Feb",
-    time: "3:00 pm - 6:00 pm",
-    location: "Watsica 24, USA",
-    title: "Share Your Blessings: Children’s Support Gala",
-    link: "/event-details",
-  },
-  {
-    id: 6,
-    img: "/images/event/event-1-6.jpg",
-    date: "12",
-    month: "Feb",
-    time: "11:00 am - 4:00 pm",
-    location: "Watsica 24, USA",
-    title: "Monthly Charity Drive: Helping Families in Need",
-    link: "/event-details",
-  },
-];
+import { getAllEvents } from "../data";
 
 function EventCard({ event, delay }) {
   return (
@@ -76,11 +14,11 @@ function EventCard({ event, delay }) {
         <div className="tp-event__item">
           {/* Thumbnail */}
           <div className="tp-event__thumb p-relative">
-            <img src={event.img} alt={event.title} />
+            <img src={event.coverImage} alt={event.title} />
             <div className="tp-event__thumb-text">
               <h4 className="tp-event__thumb-date">
-                {event.date} <br />
-                <span>{event.month}</span>
+                {event.dateDisplay.day} <br />
+                <span>{event.dateDisplay.month}</span>
               </h4>
             </div>
           </div>
@@ -90,21 +28,21 @@ function EventCard({ event, delay }) {
             <div className="tp-event__meta">
               <span style={{ color: "#444" }}>
                 <i className="far fa-clock"></i>
-                {event.time}
+                {event.dateDisplay.time}
               </span>
-              <Link href="#">
+              <Link href={`/events/${event.slug}`}>
                 <span style={{ color: "#444" }}>
-                  <i class="fa-solid fa-location-dot"></i>
-                  {event.location}
+                  <i className="fa-solid fa-location-dot"></i>
+                  {event.location?.name}
                 </span>
               </Link>
             </div>
-            <Link href={event.link}>
+            <Link href={`/events/${event.slug}`}>
               <h4 className="tp-event__title">{event.title}</h4>
             </Link>
             <div className="tp-event__link">
               <Link
-                href={event.link}
+                href={`/events/${event.slug}`}
                 className="flex items-center gap-3 text-[#444]"
                 style={{ color: "#555" }}
               >
@@ -120,6 +58,7 @@ function EventCard({ event, delay }) {
 }
 
 export default function EventSection() {
+  const EVENTS = getAllEvents();
   return (
     <div className="tp-event__area pt-115 pb-90">
       <div className="container">
@@ -128,7 +67,7 @@ export default function EventSection() {
             <EventCard
               key={event.id}
               event={event}
-              delay={`${0.3 + i * 0.2}s`} // staggered wow delay
+              delay={`${0.3 + i * 0.2}s`}
             />
           ))}
         </div>

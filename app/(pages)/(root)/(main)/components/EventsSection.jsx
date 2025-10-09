@@ -2,27 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
-const events = [
-  {
-    id: 1,
-    date: "30, MAY",
-    category: "SHELTER",
-    title: "Building Safe Shelter for Homeless Families",
-    time: "08:00 am - 05:00 pm",
-    location: "New Hyde Park, NY 5684",
-    image: "/images/event/event-2-1.jpg",
-  },
-  {
-    id: 2,
-    date: "28, JUNE",
-    category: "CHARITY",
-    title: "Spring Fundraiser: Hope & Support for Children",
-    time: "08:00 am - 05:00 pm",
-    location: "New Hyde Park, NY 5684",
-    image: "/images/event/event-2-2.jpg",
-  },
-];
+import { events } from "../events/data";
 
 export default function EventsSection() {
   return (
@@ -72,13 +52,13 @@ export default function EventsSection() {
             data-wow-delay=".9s"
           >
             <div className="tp-event-2__wrapper">
-              {events.map((event) => (
+              {events.slice(0, 2).map((event) => (
                 <div key={event.id} className="tp-event-2__item-box mb-20">
                   <div className="tp-event-2__item d-flex align-items-center">
                     {/* Thumb */}
                     <div className="tp-event-2__item-thumb p-relative">
                       <Image
-                        src={event.image}
+                        src={event.coverImage}
                         alt={event.title}
                         width={200}
                         height={140}
@@ -93,7 +73,7 @@ export default function EventsSection() {
                     {/* Text */}
                     <div className="tp-event-2__text">
                       <b>{event.category}</b>
-                      <Link href="/event-details">
+                      <Link href={`/events/${event.slug}`}>
                         <h5 className="tp-event-2__title-sm">{event.title}</h5>
                       </Link>
                       <div className="tp-event-2__meta">
@@ -102,7 +82,7 @@ export default function EventsSection() {
                         </span>
                         <span>
                           <i className="fa-solid fa-location-dot" />{" "}
-                          {event.location}
+                          {event.location?.name}
                         </span>
                       </div>
                     </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useRef } from "react";
 import { LiaQuoteLeftSolid } from "react-icons/lia";
 import {
@@ -87,9 +86,9 @@ export default function Testimonials() {
                   nothing in return.
                 </p>
               </div>
-              <Link className="tp-btn" href="/team-details">
+              {/* <Link className="tp-btn" href="/team-details">
                 All Testimonials
-              </Link>
+              </Link> */}
             </div>
           </div>
 
