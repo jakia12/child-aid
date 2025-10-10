@@ -99,37 +99,47 @@ export default function SingleEventPage({ params }) {
               </div>
             )}
 
-            {/* {event.faqs?.length > 0 && (
-              <div className="mt-4">
-                <h5 className="mb-3">FAQs</h5>
-                <div className="accordion" id="faqAccordion">
-                  {event.faqs.map((f, idx) => (
-                    <div className="accordion-item" key={idx}>
-                      <h2 className="accordion-header" id={`heading-${idx}`}>
-                        <button
-                          className="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target={`#collapse-${idx}`}
-                          aria-expanded="false"
-                          aria-controls={`collapse-${idx}`}
-                        >
-                          {f.q}
-                        </button>
-                      </h2>
+            {event.faqs?.length > 0 && (
+              <div className="mt-4 card border-0 shadow-sm mb-4 p-4">
+                <h5 className="mb-3 ">FAQs</h5>
+                {/* Flush accordion with explicit bg/text colors to avoid "invisible" text */}
+                <div className="accordion accordion-flush" id="eventFaq">
+                  {event.faqs.map((f, idx) => {
+                    const headingId = `event-faq-h-${idx}`;
+                    const collapseId = `event-faq-c-${idx}`;
+                    return (
                       <div
-                        id={`collapse-${idx}`}
-                        className="accordion-collapse collapse"
-                        aria-labelledby={`heading-${idx}`}
-                        data-bs-parent="#faqAccordion"
+                        className="accordion-item border-0 bg-white"
+                        key={idx}
                       >
-                        <div className="accordion-body">{f.a}</div>
+                        <h2 className="accordion-header" id={headingId}>
+                          <button
+                            className="accordion-button collapsed bg-white text-body fw-medium"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target={`#${collapseId}`}
+                            aria-expanded="false"
+                            aria-controls={collapseId}
+                          >
+                            {f.q}
+                          </button>
+                        </h2>
+                        <div
+                          id={collapseId}
+                          className="accordion-collapse collapse"
+                          aria-labelledby={headingId}
+                          data-bs-parent="#eventFaq"
+                        >
+                          <div className="accordion-body text-secondary">
+                            {f.a}
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
-            )} */}
+            )}
           </div>
 
           <div className="col-lg-4">

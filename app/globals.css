@@ -16604,19 +16604,39 @@ h6 {
   color: #212529 !important;
 }
 .tp-donate-2__thumb img {
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
-	transition: all .5s;
-	height: 400px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+  height: 400px;
 }
 
 /* donate page  */
 
-.bg-primary-subtle { background-color: rgba(13,110,253,.08) !important; }
-.bg-success-subtle { background-color: rgba(25,135,84,.08) !important; }
-.bg-info-subtle { background-color: rgba(13,202,240,.08) !important; }
-.bg-warning-subtle { background-color: rgba(255,193,7,.12) !important; }
+.bg-primary-subtle {
+  background-color: rgba(13, 110, 253, 0.08) !important;
+}
+.bg-success-subtle {
+  background-color: rgba(25, 135, 84, 0.08) !important;
+}
+.bg-info-subtle {
+  background-color: rgba(13, 202, 240, 0.08) !important;
+}
+.bg-warning-subtle {
+  background-color: rgba(255, 193, 7, 0.12) !important;
+}
+
+/* accordion design */
+.accordion-button:focus {
+  box-shadow: none;
+}
+.accordion-button:not(.collapsed) {
+  background-color: var(--bs-light, #f8f9fa);
+}
+.accordion-button,
+.accordion-body {
+  color: var(--bs-body-color, #212529) !important;
+}
 @media screen and (max-width: 768px) {
   .tp-mission-2__item {
     z-index: 2;
