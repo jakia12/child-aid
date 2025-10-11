@@ -32,7 +32,7 @@ export default function DonationDetailsPage({ params }) {
       <section className="py-5">
         <div className="container">
           <div className="row g-4">
-            <div className="col-lg-8">
+            <div className="col-lg-7">
               <div className="card shadow-sm border-0">
                 <img
                   src={donation.img}
@@ -107,13 +107,12 @@ export default function DonationDetailsPage({ params }) {
               </div>
             </div>
 
-            <div className="col-lg-4">
+            <div className="col-lg-5">
               <div
                 className="card border-0 shadow-sm sticky-top"
                 style={{ top: 24 }}
               >
                 <div className="card-body p-4">
-                  <h5 className="mb-3">Donate to this project</h5>
                   <DonationForm />
                 </div>
               </div>

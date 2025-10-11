@@ -17,7 +17,7 @@ export default function DonatePage() {
         bgImage="/img/hero/donate-hero.jpg" // fallback; replace with your CDN image
       />
 
-      <section className="py-5">
+      <section className="py-5" style={{ padding: "60px 0" }}>
         <div className="container">
           <div className="row g-4">
             {/* FORM */}
@@ -33,11 +33,6 @@ export default function DonatePage() {
                     amounts={[10, 25, 50, 100, 250]}
                     defaultAmount={50}
                   />
-                  <p className="small text-muted mt-3 mb-0">
-                    By donating, you agree to our Terms & Privacy. Recurring
-                    gifts can be changed or canceled anytime from your receipt
-                    link.
-                  </p>
                 </div>
               </div>
             </div>

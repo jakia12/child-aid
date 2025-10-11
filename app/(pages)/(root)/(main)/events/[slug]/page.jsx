@@ -216,9 +216,6 @@ export default function SingleEventPage({ params }) {
                     style={{ width: `${progress}%` }}
                   />
                 </div>
-                <Link href={event.ctaDonateLink} className="tp-btn w-100">
-                  Donate Now
-                </Link>
               </div>
             </div>
 

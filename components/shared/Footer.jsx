@@ -149,10 +149,7 @@ export default function Footer() {
                       We Work Together For <br /> a Beautiful World, Come Join
                       Us Today!
                     </h4>
-                    <Link
-                      className="tp-btn theme-2-bg"
-                      href="/donation-sidebar"
-                    >
+                    <Link className="tp-btn theme-2-bg" href="/donate">
                       Donate Now
                     </Link>
                   </div>

@@ -1,19 +1,21 @@
+import PartnersSlider from "@/components/shared/PartnersSlider";
 import DonateSection from "./components/DonateSection";
 import EventsSection from "./components/EventsSection";
 import Gallery from "./components/Gallery";
-import HeroSlider from "./components/HeroSlider";
+import Hero from "./components/Hero";
 import Testimonials from "./components/Testimonials";
 
 export default function Home() {
   return (
     <>
-      <HeroSlider />
+      <Hero />
       {/* <Mission /> */}
 
       <Gallery />
       <DonateSection />
       <Testimonials />
       <EventsSection />
+      <PartnersSlider />
       {/* <Newsletter /> */}
     </>
   );

@@ -1,4 +1,5 @@
 import PageBanner from "@/components/shared/PageBanner";
+import PartnersSlider from "@/components/shared/PartnersSlider";
 import AboutSection from "../components/AboutSection";
 import CtaSection from "./components/CtaSection";
 
@@ -8,6 +9,7 @@ const AboutPage = () => {
       <PageBanner title="About Us" />
       <AboutSection />
       <CtaSection />
+      <PartnersSlider />
       {/* <TeamSection /> */}
     </div>
   );
