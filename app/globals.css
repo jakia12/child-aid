@@ -16640,6 +16640,10 @@ a {
     overflow: hidden;
     margin-bottom: 30px;
   }
+
+  .mst {
+    margin-top: -35px;
+  }
   .tp-donate-2__thumb {
     flex: none;
     height: auto;
@@ -17070,19 +17074,71 @@ a {
     display: none;
   }
 }
-.mst {
-  margin-top: -34px;
-}
+
 /* Responsive spacing */
 .lead {
   max-width: 58ch;
+}
+.tp-event__thumb {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.tp-donate-2__thumb {
+  flex: none;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.tp-grey-btn {
+  background-color: var(--tp-grey-1);
+  color: var(--tp-theme-2);
+  text-align: center;
+  text-transform: capitalize;
+  z-index: 1;
+  height: 58px;
+  padding: 0 51px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 55px;
+  transition: all 0.3s;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.mrt {
+  margin-top: -97px;
+}
+.tp-contact-form__social-box a {
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  color: var(--tp-theme-1);
+  z-index: 1;
+  border: 1px solid #e6e9e9;
+  border-radius: 50%;
+  font-size: 17px;
+  line-height: 38px;
+  transition: all 0.5s;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
 }
 @media (max-width: 991.98px) {
   .content {
     text-align: left;
   }
 }
+
+/* responsive 768 */
 @media (max-width: 768px) {
+  .tp-contact-form__space {
+    padding-top: 72px;
+    padding-bottom: 80px;
+  }
   .tp-contact__area {
     display: none;
   }
@@ -17134,9 +17190,6 @@ a {
   margin-top: -38px;
 }
 
-.mrt {
-  margin-top: -37px;
-}
 .tp-header-2__logo {
   margin-top: -20px;
 }
