@@ -17094,6 +17094,9 @@ a {
   .pt-115 {
     padding-top: 71px;
   }
+  .mrt {
+    margin-top: -91px;
+  }
 }
 
 @media (max-width: 575.98px) {
