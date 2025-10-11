@@ -9,7 +9,7 @@ const causes = DONATIONS.slice(0, 4);
 export default function DonateSection() {
   return (
     <section className="tp-donate-2__area pt-115 pb-75">
-      <div className="container">
+      <div className="container px-3">
         {/* Section Header */}
         <div className="row align-items-end">
           <div className="col-xl-6 col-lg-6 col-md-6">

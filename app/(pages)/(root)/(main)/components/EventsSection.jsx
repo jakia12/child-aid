@@ -7,7 +7,7 @@ import { events } from "../events/data";
 export default function EventsSection() {
   return (
     <section className="tp-event-2__area pt-120 pb-120">
-      <div className="container">
+      <div className="container px-3">
         <div className="row">
           {/* Left content */}
           <div

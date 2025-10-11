@@ -17062,10 +17062,10 @@ a {
     font-size: 30px;
   }
   .hero-prev {
-    left: 8px;
+    display: none;
   }
   .hero-next {
-    right: 8px;
+    display: none;
   }
 }
 /* Responsive spacing */
@@ -17077,6 +17077,17 @@ a {
     text-align: left;
   }
 }
+@media (max-width: 768px) {
+  .slide {
+    background-position: center;
+    background-size: cover;
+    min-height: 53vh !important;
+  }
+  .pt-115 {
+    padding-top: 71px;
+  }
+}
+
 @media (max-width: 575.98px) {
   .lead {
     font-size: 1rem;
@@ -17111,4 +17122,7 @@ a {
 
 .mrt {
   margin-top: -37px;
+}
+.tp-header-2__logo {
+  margin-top: -20px;
 }

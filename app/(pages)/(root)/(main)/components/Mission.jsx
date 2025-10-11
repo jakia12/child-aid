@@ -46,7 +46,7 @@ export default function Mission() {
   return (
     <section>
       <div className="container" style={{ padding: "90px 0" }}>
-        <div className="container-fluid g-0">
+        <div className="container-fluid g-0 px-3">
           <div className="row">
             {/* Left Content */}
             <div className="col-xl-5 col-lg-7 col-md-7">

@@ -66,7 +66,7 @@ export default function Testimonials() {
         />
       </div>
 
-      <div className="container">
+      <div className="container px-3">
         <div className="row">
           {/* Left Side */}
           <div className="col-xl-6 col-lg-6">
