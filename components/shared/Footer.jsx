@@ -1,5 +1,6 @@
 "use client";
 
+import { events } from "@/app/(pages)/(root)/(main)/events/data";
 import Link from "next/link";
 
 export default function Footer() {
@@ -83,7 +84,7 @@ export default function Footer() {
                   <div className="tp-footer__list">
                     <ul>
                       <li>
-                        <Link href="#">Home</Link>
+                        <Link href="/">Home</Link>
                       </li>
                       <li>
                         <Link href="/about">About </Link>
@@ -113,25 +114,15 @@ export default function Footer() {
                     className="tp-footer__widget-title-2"
                     style={{ color: "#fff" }}
                   >
-                    Campaigns
+                    Events
                   </h4>
                   <div className="tp-footer__list">
                     <ul>
-                      <li>
-                        <Link href="#">Child Cancer</Link>
-                      </li>
-                      <li>
-                        <Link href="#">Differently Abled</Link>
-                      </li>
-                      <li>
-                        <Link href="#">Clean Water</Link>
-                      </li>
-                      <li>
-                        <Link href="#">Start Fundraising</Link>
-                      </li>
-                      <li>
-                        <Link href="#">Give Education</Link>
-                      </li>
+                      {events.slice(0, 4).map((ev) => (
+                        <li key={ev.id}>
+                          <Link href={`/events/${ev.slug}`}>{ev.title}</Link>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -172,16 +163,16 @@ export default function Footer() {
             </div>
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
               <div className="tp-copyright__social text-center text-sm-end">
-                <Link href="#">
+                <Link href="https://www.facebook.com/">
                   <i className="fab fa-facebook-f" aria-hidden="true"></i>
                 </Link>
-                <Link href="#">
+                <Link href="https://www.instagram.com/">
                   <i className="fab fa-instagram" aria-hidden="true"></i>
                 </Link>
-                <Link href="#">
+                <Link href="https://www.twitter.com/">
                   <i className="fab fa-twitter" aria-hidden="true"></i>
                 </Link>
-                <Link href="#">
+                <Link href="https://www.pinterest.com/">
                   <i className="fab fa-pinterest-p" aria-hidden="true"></i>
                 </Link>
               </div>

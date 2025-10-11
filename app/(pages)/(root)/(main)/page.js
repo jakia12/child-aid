@@ -3,13 +3,14 @@ import DonateSection from "./components/DonateSection";
 import EventsSection from "./components/EventsSection";
 import Gallery from "./components/Gallery";
 import Hero from "./components/Hero";
+import Mission from "./components/Mission";
 import Testimonials from "./components/Testimonials";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      {/* <Mission /> */}
+      <Mission />
 
       <Gallery />
       <DonateSection />

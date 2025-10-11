@@ -1,5 +1,7 @@
 "use client";
 
+import { useRef } from "react";
+import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
@@ -20,7 +22,7 @@ const SLIDES = [
     titleBefore: "Stand up for the",
     highlight: "Deprived",
     desc: "Your support brings essentials like food, education, and healthcare to vulnerable children.",
-    cta: { label: "View More", href: "/about" },
+    cta: { label: "Learn More", href: "/about" },
   },
   {
     bg: "/images/slider/sl2.jpg",
@@ -36,13 +38,32 @@ const SLIDES = [
     titleBefore: "Small acts create",
     highlight: "Big Change",
     desc: "Join our mission to protect, educate, and empower children around the world.",
-    cta: { label: "See Programs", href: "/campaigns" },
+    cta: { label: "See Programs", href: "/events" },
   },
 ];
 
 export default function Hero() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
-    <section className="hero-slider position-relative">
+    <section className="hero-slider position-relative mrt">
+      {/* Custom nav buttons */}
+      <button
+        ref={prevRef}
+        className="hero-nav hero-prev"
+        aria-label="Previous slide"
+      >
+        <IoMdArrowDropleft className="icon" />
+      </button>
+      <button
+        ref={nextRef}
+        className="hero-nav hero-next"
+        aria-label="Next slide"
+      >
+        <IoMdArrowDropright className="icon" />
+      </button>
+
       <Swiper
         modules={[Autoplay, Pagination, Navigation, A11y, EffectFade]}
         effect="fade"
@@ -54,7 +75,18 @@ export default function Hero() {
           pauseOnMouseEnter: true,
         }}
         pagination={{ clickable: true }}
-        navigation
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onBeforeInit={(swiper) => {
+          // bind navigation after refs are set
+          // (required when using custom buttons)
+          // @ts-ignore
+          swiper.params.navigation.prevEl = prevRef.current;
+          // @ts-ignore
+          swiper.params.navigation.nextEl = nextRef.current;
+        }}
         className="hero-swiper"
         aria-label="Hero slider"
       >
@@ -84,10 +116,7 @@ export default function Hero() {
 
                   <p className="lead text-white-75 mb-4">{s.desc}</p>
 
-                  <a
-                    href={s.cta.href}
-                    className="btn btn-ghost-light btn-lg px-4"
-                  >
+                  <a href={s.cta.href} className="tp-btn btn-lg px-4">
                     {s.cta.label}
                   </a>
                 </div>
@@ -96,6 +125,8 @@ export default function Hero() {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* Styles */}
     </section>
   );
 }

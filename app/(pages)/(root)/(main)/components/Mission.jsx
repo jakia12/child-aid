@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { GoArrowRight } from "react-icons/go";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { MdOutlineWaterDrop } from "react-icons/md";
@@ -10,7 +11,7 @@ export default function Mission() {
     {
       id: 1,
       icon: <SlBookOpen />,
-      title: "Kids Education",
+      title: " Education",
       description:
         "We provide books, school fees, and safe classrooms so every child can learn and dream of a brighter future.",
       link: "/donation-details",
@@ -43,15 +44,8 @@ export default function Mission() {
   // },
 
   return (
-    <div className="tp-mission-2__area tp-mission-2__space p-relative fix z-index grey-bg">
-      <div className="tp-mission-2__shape">
-        {/* <img
-          src="/assets/img/mission/mission-shape-1.png"
-          alt="Mission Shape"
-        /> */}
-      </div>
-
-      <div className="tp-mission-2__plr">
+    <section>
+      <div className="container" style={{ padding: "90px 0" }}>
         <div className="container-fluid g-0">
           <div className="row">
             {/* Left Content */}
@@ -69,9 +63,9 @@ export default function Mission() {
                     <br />
                     education, clean water, and nutritious food
                   </p>
-                  <a className="tp-btn" href="/donation-sidebar">
+                  <Link className="tp-btn" href="/donate">
                     Donate Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -117,6 +111,6 @@ export default function Mission() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

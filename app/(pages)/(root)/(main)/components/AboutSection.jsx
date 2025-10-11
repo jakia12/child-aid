@@ -109,8 +109,8 @@ export default function AboutSection() {
 
               <div className="tp-about-2__bottom d-flex">
                 <div className="tp-about-2__btn">
-                  <Link className="tp-btn" href="/about">
-                    Discover More
+                  <Link className="tp-btn" href="/events">
+                    Check Events
                   </Link>
                 </div>
 

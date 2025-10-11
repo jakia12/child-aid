@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
 import { z } from "zod";
 
 // Zod schema (runs on submit)
@@ -48,22 +49,78 @@ export default function DonationForm() {
     return { ok: false };
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     setSubmitted(true);
-    const result = validate(form);
-    if (!result.ok) return;
 
-    alert(
-      `Thanks ${form.fullName}! Your ${form.frequency} gift of $${form.amount} was received.`
-    );
+    // Ensure number type for amount
+    const payload = {
+      ...form,
+      amount: Number(form.amount),
+    };
+
+    const result = validate(payload);
+    if (!result.ok) {
+      const first = Object.values(errors)[0];
+      if (first) toast.error(String(first));
+      return;
+    }
+
+    // Map frequency to API's expected values: "one-time" -> "once"
+    const apiFrequency = form.frequency === "one-time" ? "once" : "monthly";
+
+    const loadingId = toast.loading("Creating secure checkout…");
+    try {
+      const res = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          amount: Number(form.amount),
+          frequency: apiFrequency,
+          name: form.fullName,
+          email: form.email,
+          phone: form.phone,
+          country: "", // optional; not in this form
+          anonymous: false, // optional; not in this form
+          message: "", // optional; not in this form
+        }),
+      });
+
+      let data = {};
+      try {
+        data = await res.json();
+      } catch {
+        toast.error(`Checkout error (HTTP ${res.status}).`);
+        return;
+      }
+
+      if (!res.ok) {
+        toast.error(data?.error || "Unable to start checkout.");
+        return;
+      }
+
+      if (!data?.url) {
+        toast.error("Checkout session not created (no url).");
+        return;
+      }
+
+      toast.success("Donation details received. Redirecting to Stripe…");
+      window.location.href = data.url; // direct redirect (no stripe-js needed)
+    } catch (err) {
+      toast.error("Unexpected error. Please try again.");
+    } finally {
+      toast.dismiss(loadingId);
+    }
   }
 
   return (
     <>
+      <Toaster position="top-right" />
+
       <form onSubmit={handleSubmit} className="card shadow-sm border-0">
         <div className="card-body ">
           <h5 className="mb-3">Donate to this project</h5>
+
           <div className="row g-2">
             <div className="col-md-6">
               <label htmlFor="fullName" className="form-label">

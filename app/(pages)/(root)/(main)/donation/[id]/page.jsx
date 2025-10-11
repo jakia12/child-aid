@@ -1,4 +1,5 @@
 import PageBanner from "@/components/shared/PageBanner";
+import ShareButtons from "@/components/shared/ShareButtons";
 import Link from "next/link";
 import { DONATIONS, formatCurrency, getDonationById } from "../data";
 import DonationForm from "./DonationForm";
@@ -120,17 +121,13 @@ export default function DonationDetailsPage({ params }) {
               <div className="card border-0 shadow-sm mt-4">
                 <div className="card-body p-4">
                   <h6 className="text-uppercase text-muted mb-2">Share</h6>
-                  <div className="d-flex gap-2">
-                    <a className="btn btn-outline-secondary btn-sm" href="#">
-                      <i className="fa-brands fa-x-twitter me-2"></i>Twitter
-                    </a>
-                    <a className="btn btn-outline-secondary btn-sm" href="#">
-                      <i className="fa-brands fa-facebook-f me-2"></i>Facebook
-                    </a>
-                    <a className="btn btn-outline-secondary btn-sm" href="#">
-                      <i className="fa-brands fa-linkedin-in me-2"></i>LinkedIn
-                    </a>
-                  </div>
+                  <ShareButtons
+                    path={`/donation/${donation.id}`}
+                    title={donation.title}
+                    summary={donation.shortDescription}
+                    hashtags={["donate", "charity", "nonprofit"]}
+                    utm="utm_source=share&utm_medium=social"
+                  />
                 </div>
               </div>
             </div>
@@ -154,10 +151,7 @@ export default function DonationDetailsPage({ params }) {
                       <p className="card-text small text-muted">
                         {d.shortDescription}
                       </p>
-                      <Link
-                        href={`/donation/${d.id}`}
-                        className="stretched-link"
-                      >
+                      <Link href={`/donation/${d.id}`} className="tp-btn">
                         View project
                       </Link>
                     </div>

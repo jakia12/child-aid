@@ -1,3 +1,4 @@
+import ShareButtons from "@/components/shared/ShareButtons";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getEventBySlug } from "../data";
@@ -219,20 +220,18 @@ export default function SingleEventPage({ params }) {
               </div>
             </div>
 
-            <div className="card border-0 shadow-sm">
+            <div className="card border-0 shadow-sm mt-4">
               <div className="card-body p-4">
-                <h6 className="mb-3">Share</h6>
-                <div className="d-flex gap-2">
-                  <a className="btn btn-outline-secondary btn-sm" href="#">
-                    <i className="fab fa-facebook-f" />
-                  </a>
-                  <a className="btn btn-outline-secondary btn-sm" href="#">
-                    <i className="fab fa-x-twitter" />
-                  </a>
-                  <a className="btn btn-outline-secondary btn-sm" href="#">
-                    <i className="fab fa-linkedin-in" />
-                  </a>
-                </div>
+                <h6 className="text-uppercase text-muted mb-2">Share</h6>
+                <ShareButtons
+                  path={`/events/${event.slug || params.slug}`}
+                  title={event.title}
+                  summary={event.subtitle || event.summary}
+                  hashtags={(event.categories || [])
+                    .map((c) => c.replace(/[^\w]/g, ""))
+                    .slice(0, 5)}
+                  utm="utm_source=share&utm_medium=social&utm_campaign=event"
+                />
               </div>
             </div>
           </div>
