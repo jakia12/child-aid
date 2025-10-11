@@ -1,3 +1,4 @@
+import PageBanner from "@/components/shared/PageBanner";
 import ShareButtons from "@/components/shared/ShareButtons";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -15,228 +16,232 @@ export default function SingleEventPage({ params }) {
   );
 
   return (
-    <div className="py-5">
-      <div className="container">
-        <nav aria-label="breadcrumb" className="mb-4">
-          <ol className="breadcrumb">
-            <li className="breadcrumb-item">
-              <Link href="/">Home</Link>
-            </li>
-            <li className="breadcrumb-item">
-              <Link href="/events">Events</Link>
-            </li>
-            <li className="breadcrumb-item active" aria-current="page">
-              {event.title}
-            </li>
-          </ol>
-        </nav>
+    <>
+      <PageBanner title={event.title} />
 
-        <div className="row g-4">
-          <div className="col-lg-8">
-            <div className="card border-0 shadow-sm">
-              <div className="ratio ratio-16x9">
-                {/* hero/cover */}
-                {/* Using img for existing assets to avoid layout shift */}
-                <img
-                  src={event.coverImage}
-                  alt={event.title}
-                  className="w-100 h-100 object-fit-cover"
-                />
-              </div>
-              <div className="card-body p-4">
-                <h1 className="h3 mb-2">{event.title}</h1>
-                <p className="text-muted mb-3">{event.subtitle}</p>
-                <div className="d-flex flex-wrap gap-3 text-secondary small mb-4">
-                  <span>
-                    <i className="far fa-clock me-2" />
-                    {event.dateDisplay.time}
-                  </span>
-                  <span>
-                    <i className="fa-solid fa-location-dot me-2" />
-                    {event.location.name}
-                  </span>
-                  <span>
-                    <i className="fa-solid fa-tags me-2" />
-                    {event.categories.join(", ")}
-                  </span>
+      <div className="py-5">
+        <div className="container">
+          <nav aria-label="breadcrumb" className="mb-4">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item">
+                <Link href="/">Home</Link>
+              </li>
+              <li className="breadcrumb-item">
+                <Link href="/events">Events</Link>
+              </li>
+              <li className="breadcrumb-item active" aria-current="page">
+                {event.title}
+              </li>
+            </ol>
+          </nav>
+
+          <div className="row g-4">
+            <div className="col-lg-8">
+              <div className="card border-0 shadow-sm">
+                <div className="ratio ratio-16x9">
+                  {/* hero/cover */}
+                  {/* Using img for existing assets to avoid layout shift */}
+                  <img
+                    src={event.coverImage}
+                    alt={event.title}
+                    className="w-100 h-100 object-fit-cover"
+                  />
                 </div>
+                <div className="card-body p-4">
+                  <h1 className="h3 mb-2">{event.title}</h1>
+                  <p className="text-muted mb-3">{event.subtitle}</p>
+                  <div className="d-flex flex-wrap gap-3 text-secondary small mb-4">
+                    <span>
+                      <i className="far fa-clock me-2" />
+                      {event.dateDisplay.time}
+                    </span>
+                    <span>
+                      <i className="fa-solid fa-location-dot me-2" />
+                      {event.location.name}
+                    </span>
+                    <span>
+                      <i className="fa-solid fa-tags me-2" />
+                      {event.categories.join(", ")}
+                    </span>
+                  </div>
 
-                <p className="mb-4">{event.summary}</p>
+                  <p className="mb-4">{event.summary}</p>
 
-                <h5 className="mb-3">Event Agenda</h5>
-                <ul className="list-group list-group-flush mb-4">
-                  {event.agenda.map((a, idx) => (
-                    <li
-                      key={idx}
-                      className="list-group-item d-flex justify-content-between"
-                    >
-                      <span className="fw-medium">{a.item}</span>
-                      <span className="text-secondary">{a.time}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <h5 className="mb-3">Impact</h5>
-                <p className="mb-0">{event.impact}</p>
-              </div>
-            </div>
-
-            {event.gallery?.length > 0 && (
-              <div className="mt-4">
-                <h5 className="mb-3">Gallery</h5>
-                <div className="row g-3">
-                  {event.gallery.map((src, idx) => (
-                    <div className="col-6 col-md-4" key={idx}>
-                      <div className="ratio ratio-4x3 rounded overflow-hidden">
-                        <img
-                          src={src}
-                          alt={`Gallery ${idx + 1}`}
-                          className="w-100 h-100 object-fit-cover"
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {event.faqs?.length > 0 && (
-              <div className="mt-4 card border-0 shadow-sm mb-4 p-4">
-                <h5 className="mb-3 ">FAQs</h5>
-                {/* Flush accordion with explicit bg/text colors to avoid "invisible" text */}
-                <div className="accordion accordion-flush" id="eventFaq">
-                  {event.faqs.map((f, idx) => {
-                    const headingId = `event-faq-h-${idx}`;
-                    const collapseId = `event-faq-c-${idx}`;
-                    return (
-                      <div
-                        className="accordion-item border-0 bg-white"
+                  <h5 className="mb-3">Event Agenda</h5>
+                  <ul className="list-group list-group-flush mb-4">
+                    {event.agenda.map((a, idx) => (
+                      <li
                         key={idx}
+                        className="list-group-item d-flex justify-content-between"
                       >
-                        <h2 className="accordion-header" id={headingId}>
-                          <button
-                            className="accordion-button collapsed bg-white text-body fw-medium"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target={`#${collapseId}`}
-                            aria-expanded="false"
-                            aria-controls={collapseId}
-                          >
-                            {f.q}
-                          </button>
-                        </h2>
-                        <div
-                          id={collapseId}
-                          className="accordion-collapse collapse"
-                          aria-labelledby={headingId}
-                          data-bs-parent="#eventFaq"
-                        >
-                          <div className="accordion-body text-secondary">
-                            {f.a}
-                          </div>
+                        <span className="fw-medium">{a.item}</span>
+                        <span className="text-secondary">{a.time}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <h5 className="mb-3">Impact</h5>
+                  <p className="mb-0">{event.impact}</p>
+                </div>
+              </div>
+
+              {event.gallery?.length > 0 && (
+                <div className="mt-4">
+                  <h5 className="mb-3">Gallery</h5>
+                  <div className="row g-3">
+                    {event.gallery.map((src, idx) => (
+                      <div className="col-6 col-md-4" key={idx}>
+                        <div className="ratio ratio-4x3 rounded overflow-hidden">
+                          <img
+                            src={src}
+                            alt={`Gallery ${idx + 1}`}
+                            className="w-100 h-100 object-fit-cover"
+                          />
                         </div>
                       </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-          </div>
-
-          <div className="col-lg-4">
-            <div className="card border-0 shadow-sm mb-4">
-              <div className="card-body p-4">
-                <h5 className="mb-3">Event Details</h5>
-                <div className="d-flex align-items-center mb-2">
-                  <div className="display-6 fw-bold me-2">
-                    {event.dateDisplay.day}
-                  </div>
-                  <div className="text-uppercase text-secondary">
-                    {event.dateDisplay.month}
+                    ))}
                   </div>
                 </div>
-                <div className="mb-2">
-                  <i className="far fa-clock me-2" /> {event.dateDisplay.time}
-                </div>
-                <div className="mb-2">
-                  <i className="fa-solid fa-location-dot me-2" />{" "}
-                  {event.location.address}
-                </div>
-                <div className="mb-3">
-                  <a
-                    className="link-primary"
-                    href={event.location.mapUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    View on map
-                  </a>
-                </div>
+              )}
 
-                <h6 className="mt-3">Organizer</h6>
-                <ul className="list-unstyled small mb-3">
-                  <li className="mb-1">
-                    <i className="fa-regular fa-building me-2" />{" "}
-                    {event.organizer.name}
-                  </li>
-                  <li className="mb-1">
-                    <i className="fa-solid fa-phone me-2" />{" "}
-                    {event.organizer.phone}
-                  </li>
-                  <li className="mb-1">
-                    <i className="fa-regular fa-envelope me-2" />{" "}
-                    {event.organizer.email}
-                  </li>
-                  <li className="mb-1">
-                    <i className="fa-solid fa-globe me-2" />
+              {event.faqs?.length > 0 && (
+                <div className="mt-4 card border-0 shadow-sm mb-4 p-4">
+                  <h5 className="mb-3 ">FAQs</h5>
+                  {/* Flush accordion with explicit bg/text colors to avoid "invisible" text */}
+                  <div className="accordion accordion-flush" id="eventFaq">
+                    {event.faqs.map((f, idx) => {
+                      const headingId = `event-faq-h-${idx}`;
+                      const collapseId = `event-faq-c-${idx}`;
+                      return (
+                        <div
+                          className="accordion-item border-0 bg-white"
+                          key={idx}
+                        >
+                          <h2 className="accordion-header" id={headingId}>
+                            <button
+                              className="accordion-button collapsed bg-white text-body fw-medium"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target={`#${collapseId}`}
+                              aria-expanded="false"
+                              aria-controls={collapseId}
+                            >
+                              {f.q}
+                            </button>
+                          </h2>
+                          <div
+                            id={collapseId}
+                            className="accordion-collapse collapse"
+                            aria-labelledby={headingId}
+                            data-bs-parent="#eventFaq"
+                          >
+                            <div className="accordion-body text-secondary">
+                              {f.a}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="col-lg-4">
+              <div className="card border-0 shadow-sm mb-4">
+                <div className="card-body p-4">
+                  <h5 className="mb-3">Event Details</h5>
+                  <div className="d-flex align-items-center mb-2">
+                    <div className="display-6 fw-bold me-2">
+                      {event.dateDisplay.day}
+                    </div>
+                    <div className="text-uppercase text-secondary">
+                      {event.dateDisplay.month}
+                    </div>
+                  </div>
+                  <div className="mb-2">
+                    <i className="far fa-clock me-2" /> {event.dateDisplay.time}
+                  </div>
+                  <div className="mb-2">
+                    <i className="fa-solid fa-location-dot me-2" />{" "}
+                    {event.location.address}
+                  </div>
+                  <div className="mb-3">
                     <a
-                      href={event.organizer.website}
+                      className="link-primary"
+                      href={event.location.mapUrl}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Website
+                      View on map
                     </a>
-                  </li>
-                </ul>
+                  </div>
 
-                <div className="mb-2 d-flex justify-content-between align-items-center">
-                  <span className="small text-secondary">Raised</span>
-                  <span className="fw-semibold">
-                    ${event.donationRaisedUsd.toLocaleString()}
-                  </span>
-                </div>
-                <div className="mb-2 d-flex justify-content-between align-items-center">
-                  <span className="small text-secondary">Goal</span>
-                  <span className="fw-semibold">
-                    ${event.donationTargetUsd.toLocaleString()}
-                  </span>
-                </div>
-                <div className="progress mb-3" style={{ height: 8 }}>
-                  <div
-                    className="progress-bar"
-                    style={{ width: `${progress}%` }}
-                  />
+                  <h6 className="mt-3">Organizer</h6>
+                  <ul className="list-unstyled small mb-3">
+                    <li className="mb-1">
+                      <i className="fa-regular fa-building me-2" />{" "}
+                      {event.organizer.name}
+                    </li>
+                    <li className="mb-1">
+                      <i className="fa-solid fa-phone me-2" />{" "}
+                      {event.organizer.phone}
+                    </li>
+                    <li className="mb-1">
+                      <i className="fa-regular fa-envelope me-2" />{" "}
+                      {event.organizer.email}
+                    </li>
+                    <li className="mb-1">
+                      <i className="fa-solid fa-globe me-2" />
+                      <a
+                        href={event.organizer.website}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Website
+                      </a>
+                    </li>
+                  </ul>
+
+                  <div className="mb-2 d-flex justify-content-between align-items-center">
+                    <span className="small text-secondary">Raised</span>
+                    <span className="fw-semibold">
+                      ${event.donationRaisedUsd.toLocaleString()}
+                    </span>
+                  </div>
+                  <div className="mb-2 d-flex justify-content-between align-items-center">
+                    <span className="small text-secondary">Goal</span>
+                    <span className="fw-semibold">
+                      ${event.donationTargetUsd.toLocaleString()}
+                    </span>
+                  </div>
+                  <div className="progress mb-3" style={{ height: 8 }}>
+                    <div
+                      className="progress-bar"
+                      style={{ width: `${progress}%` }}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="card border-0 shadow-sm mt-4">
-              <div className="card-body p-4">
-                <h6 className="text-uppercase text-muted mb-2">Share</h6>
-                <ShareButtons
-                  path={`/events/${event.slug || params.slug}`}
-                  title={event.title}
-                  summary={event.subtitle || event.summary}
-                  hashtags={(event.categories || [])
-                    .map((c) => c.replace(/[^\w]/g, ""))
-                    .slice(0, 5)}
-                  utm="utm_source=share&utm_medium=social&utm_campaign=event"
-                />
+              <div className="card border-0 shadow-sm mt-4">
+                <div className="card-body p-4">
+                  <h6 className="text-uppercase text-muted mb-2">Share</h6>
+                  <ShareButtons
+                    path={`/events/${event.slug || params.slug}`}
+                    title={event.title}
+                    summary={event.subtitle || event.summary}
+                    hashtags={(event.categories || [])
+                      .map((c) => c.replace(/[^\w]/g, ""))
+                      .slice(0, 5)}
+                    utm="utm_source=share&utm_medium=social&utm_campaign=event"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

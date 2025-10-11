@@ -214,7 +214,7 @@ export default function Header() {
                 </li>
                 <li className="mt-2">
                   <Link
-                    href="/donation"
+                    href="/donate"
                     className="tp-btn w-100 text-center d-inline-block"
                     onClick={() => setIsMenuOpen(false)}
                     style={{ color: "#fff" }}

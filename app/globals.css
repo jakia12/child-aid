@@ -5076,7 +5076,7 @@ input[type="url"] {
 .tp-header-2__plr {
   padding: 0 45px;
   margin-top: 20px;
-  background-color: var(--tp-common-white);
+  background-color: transparent !important;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .tp-header-2__plr {
@@ -9456,7 +9456,7 @@ input[type="url"] {
   transform: scaleY(1);
 }
 .tp-mission-2__item:hover .tp-mission-2__title-sm {
-  color: var(--tp-common-white);
+  color: white;
 }
 .tp-mission-2__item:hover .tp-mission-2__text p {
   color: var(--tp-common-white);
@@ -16888,6 +16888,7 @@ a {
   --white: #fff;
   --shadow: rgba(0, 0, 0, 0.35);
   position: relative;
+  z-index: 0;
 }
 
 .slide {
@@ -16969,6 +16970,7 @@ a {
 .hero-slider {
   --accent: #fe7f4c;
   --ink: #0b2727;
+  z-index: 0;
 }
 .slide {
   min-height: clamp(480px, 72vh, 820px);
@@ -17078,6 +17080,12 @@ a {
   }
 }
 @media (max-width: 768px) {
+  .tp-contact__area {
+    display: none;
+  }
+  .mst {
+    margin-top: -89px;
+  }
   .slide {
     background-position: center;
     background-size: cover;
@@ -17125,4 +17133,12 @@ a {
 }
 .tp-header-2__logo {
   margin-top: -20px;
+}
+
+.tp-mission-2__title-sm {
+  padding-bottom: 10px;
+  font-size: 22px;
+  font-weight: 800;
+  transition: all 0.5s ease-in-out 0.1s;
+  color: #07847f;
 }
