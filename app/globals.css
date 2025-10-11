@@ -17070,6 +17070,9 @@ a {
     display: none;
   }
 }
+.mst {
+  margin-top: -34px;
+}
 /* Responsive spacing */
 .lead {
   max-width: 58ch;
